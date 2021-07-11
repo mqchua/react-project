@@ -7,7 +7,7 @@ import Tables from './pages/tables/Tables';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery';
 import 'bootstrap/dist/js/bootstrap';
-import {Navbar,Nav,NavDropdown,Form,FormControl,Button} from 'react-bootstrap';
+import { Navbar,Nav } from 'react-bootstrap';
 
 
 export default function App() {
@@ -27,8 +27,9 @@ export default function App() {
           </Navbar.Collapse>
         </Navbar>
 
+        <br/>
+        <br/>
 
-        {/*<h1>Product Manager</h1>*/}
           <Switch>
             <Route path="/" exact component={Home}/>
             <Route path="/tables" exact component={Tables}/>
