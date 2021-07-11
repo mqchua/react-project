@@ -16,7 +16,7 @@ export default function App() {
       <div>
         <BrowserRouter>
 
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="dark" variant="dark" expand="lg">
           <Navbar.Brand href="#home">Product Manager</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -26,9 +26,6 @@ export default function App() {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-
-        <br/>
-        <br/>
 
           <Switch>
             <Route path="/" exact component={Home}/>
