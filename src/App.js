@@ -7,6 +7,7 @@ import Tables from './pages/tables/Tables';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'jquery';
 import 'bootstrap/dist/js/bootstrap';
+import {Navbar,Nav,NavDropdown,Form,FormControl,Button} from 'react-bootstrap';
 
 
 export default function App() {
@@ -15,7 +16,19 @@ export default function App() {
       <div>
         <BrowserRouter>
 
-        <h1>Product Manager</h1>
+        <Navbar bg="light" expand="lg">
+          <Navbar.Brand href="#home">Product Manager</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/tables">Tables</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+
+
+        {/*<h1>Product Manager</h1>*/}
           <Switch>
             <Route path="/" exact component={Home}/>
             <Route path="/tables" exact component={Tables}/>
