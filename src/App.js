@@ -1,31 +1,48 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-
+import { AppBar, Toolbar, Typography, Button, IconButton, makeStyles } from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu';
 import Home from './pages/home/Home';
 import Tables from './pages/tables/Tables';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'jquery';
-import 'bootstrap/dist/js/bootstrap';
-import { Navbar,Nav } from 'react-bootstrap';
 
+
+const useStyles = makeStyles((theme) => ({
+ root: {
+    flexGrow: 1,
+  },
+  grow: {
+    flexGrow: 1,
+    outline: "5px dotted green",
+  },
+  menuButton: {
+    marginLeft: -12,
+    marginRight: 20,
+    outline: "5px dotted green",
+}
+}));
 
 export default function App() {
+
+  const classes = useStyles();
+
   return (
 
-      <div>
         <BrowserRouter>
 
-        <Navbar bg="dark" variant="dark" expand="lg">
-          <Navbar.Brand href="/">Product Manager</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/tables">Tables</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
+         <AppBar position="static">
+            <Toolbar>
+              <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+                <MenuIcon />
+              </IconButton>
+              <Typography variant="h6" color="inherit" className={classes.grow}>
+                Product Manager
+              </Typography>
+              <Button color="inherit" href="/">Home</Button>
+              <Button color="inherit" href="/tables">Tables</Button>
+            </Toolbar>
+          </AppBar>
+
 
           <Switch>
             <Route path="/" exact component={Home}/>
@@ -33,6 +50,5 @@ export default function App() {
           </Switch>
 
         </BrowserRouter>
-      </div>
   );
 }
